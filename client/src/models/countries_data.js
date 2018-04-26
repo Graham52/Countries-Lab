@@ -1,7 +1,8 @@
 const Request = require('../services/request.js');
 
-const CountryData = function () {
-  this.url = 'https://restcountries.eu/rest/v2/all';
+const CountryData = function (url) {
+  // this.url = 'https://restcountries.eu/rest/v2/all';
+  this.url = url;
   this.data = null;
 };
 
@@ -14,8 +15,5 @@ CountryData.prototype.getData = function (onComplete) {
   });
 };
 
-CountryData.prototype.renderData = function () {
-
-};
 
 module.exports = CountryData

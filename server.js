@@ -27,11 +27,25 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client) {
         console.error(err);
         res.status(500);
         res.send();
-      }
+        return;
+      };
 
       console.log('Saved!');
       res.status(201);
       res.json(result.ops[0]);
+    });
+  });
+
+  //INDEX
+  server.get('/api/countries', function (req, res) {
+    countriesCollection.find().toArray( function (err, result) {
+      if (err) {
+        console.error(err);
+        response.status(500);
+        response.send();
+        return;
+      };
+      res.json(result);
     });
   });
 

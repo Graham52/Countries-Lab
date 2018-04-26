@@ -30,4 +30,21 @@ Request.prototype.post = function (onComplete, payLoad) {
   request.send(jsonPayLoad);
 };
 
+
+// Request.prototype.get = function (onComplete) {
+//   const request = new XMLHttpRequest();
+//   request.open('GET', this.url);
+//
+//   request.addEventListener('load', function () {
+//     if (request.status !== 200) {
+//       console.error(request.status);
+//       return;
+//     }
+//     const responseBody = JSON.parse(request.responseText);
+//     onComplete(responseBody);
+//   });
+//   request.send();
+// };
+
+
 module.exports = Request
